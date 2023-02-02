@@ -27,26 +27,35 @@ public class Recursion {
         // Example:
         // String fullName = "elizer ponio jr";
 
-        String fullName = "dan niel a añasco";
+        String fullName = " ";
 
         removeLetter(fullName);
         
     }
 
     static void removeLetter(String str) {
-      
-        if (str.length()==0){
-            return;
+       
+        extractLetters(str, "");
+
+    } 
+
+    static String extractLetters(String str, String result) {
+
+        if(str.length() == 0) {
+            return result;
         }
-
-    
-        char vowel = str.charAt(0);
-        if (vowel == 'b' | vowel == 'c' | vowel == 'd' | vowel == 'f' | vowel == 'g'| vowel == ' '){
-            System.out.print(vowel);
-
+        char n = str.charAt(0);
+        switch (n) {
+        
+        case 'a', 'e', 'i', 'o', 'u':
+          
+        System.out.println(result + str.substring(1));
+            
+            return extractLetters(str.substring(1), result);
+            
+            default:
+            
+            return n + extractLetters(str.substring(1), result + n);
         }
-
-        removeLetter(str.substring(1)); 
-
     }
 }
