@@ -27,7 +27,7 @@ public class Recursion {
         // Example:
         // String fullName = "elizer ponio jr";
 
-        String fullName = " ";
+        String fullName = "dan niel a añasco";
 
         removeLetter(fullName);
         
